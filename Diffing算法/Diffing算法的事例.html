@@ -52,17 +52,17 @@
         一、使用索引值(index)作为key：
                                 初次挂载组件：
                                         1.初始的数据：
-                                                {id:'atguigu_001',name:'小张',age:18},
-                                                {id:'atguigu_002',name:'小李',age:19},
+                                                {id:'num_000',name:'小张',age:18},
+                                                {id:'num_001',name:'小李',age:19},
                                         2.初始的虚拟DOM
                                                 <li key=0>小张-18 <input type="text"/> </li>
                                                 <li key=1>小李-19 <input type="text"/> </li>
                             	
                                 更新：
                                         1.新的数据：
-                                                {id:'atguigu_003',name:'小王',age:20},
-                                                {id:'atguigu_001',name:'小张',age:18},
-                                                {id:'atguigu_002',name:'小李',age:19},
+                                                {id:'num_000',name:'小王',age:20},
+                                                {id:'num_001',name:'小张',age:18},
+                                                {id:'num_002',name:'小李',age:19},
                                         2.新的虚拟DOM
                                                 <li key=0>小王-20 <input type="text"/> </li>
                                                 <li key=1>小张-18 <input type="text"/> </li>
@@ -70,34 +70,34 @@
         二、使用唯一标识(id)作为key：
                                 初次挂载组件：
                                         1.初始的数据：
-                                                {id:'atguigu_001',name:'小张',age:18},
-                                                {id:'atguigu_002',name:'小李',age:19},
+                                                {id:'num_000'',name:'小张',age:18},
+                                                {id:'num_001'',name:'小李',age:19},
                                         2.初始的虚拟DOM
-                                                <li key="atguigu_001">小张-18 <input type="text"/> </li>
-                                                <li key="atguigu_002">小李-19 <input type="text"/> </li>
+                                                <li key="num_000'">小张-18 <input type="text"/> </li>
+                                                <li key="num_001'">小李-19 <input type="text"/> </li>
                             	
                                 更新：
                                         1.新的数据：
-                                                {id:'atguigu_003',name:'小王',age:20},
-                                                {id:'atguigu_001',name:'小张',age:18},
-                                                {id:'atguigu_002',name:'小李',age:19},
+                                                {id:'num_000',name:'小王',age:20},
+                                                {id:'num_001',name:'小张',age:18},
+                                                {id:'num_002',name:'小李',age:19},
                                         2.新的虚拟DOM
-                                                <li key="atguigu_003">小王-20 <input type="text"/> </li>
-                                                <li key="atguigu_001">小张-18 <input type="text"/> </li>
-                                                <li key="atguigu_002">小李-19 <input type="text"/> </li>
+                                                <li key="num_000">小王-20 <input type="text"/> </li>
+                                                <li key="num_001">小张-18 <input type="text"/> </li>
+                                                <li key="num_002">小李-19 <input type="text"/> </li>
     	
         */
 
         class Person extends React.Component {
             state = {
                 persons: [
-                    { id: 'atguigu_001', name: '小张', age: 18 },
-                    { id: 'atguigu_002', name: '小李', age: 19 },
+                    { id: 'num_000', name: '小张', age: 18 },
+                    { id: 'num_001', name: '小李', age: 19 },
                 ]
             }
 
             addWang = () => {
-                let wang = { id: "atguigu_003", name: "小王", age: 20 }
+                let wang = { id: "num_003", name: "小王", age: 20 }
                 const { persons } = this.state
                 this.setState({ persons: [wang, ...persons] })
             }
